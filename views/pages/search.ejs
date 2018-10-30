@@ -1,65 +1,213 @@
+<div class="row">
+    <!-- <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+    </nav>
 
-  <div class="card-group">
-    <div class="card">
-      <div class="card-body">
-
-        <h5 class="card-title">Singing Contest</h5>
-
-
-        <div class="row ">
-          <div class="col-4">
-            <img style="overflow: hidden" class="card-img-top" src="https://www.thehindu.com/news/international/article19669980.ece/alternates/FREE_300/monkey-selfie-web-cropjpg"
-              alt="Card image cap">
-            <!-- <img width="180px" height="260px" class="mr-3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR37vpcYq1SGUS3Qc0ECbezLBIUu6PBZLYUtBhD2EEJhpNnKLxBhQ"
-                              alt="Generic placeholder image"> -->
-          </div>
-          <div class="col-8">
-            <div class="card " style="width: 42rem;">
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">一年一度既HKBU Singing
-                  Contest又到啦！身为浸大人怎么能够错过！？欢迎大家踊跃报名！可登录学校官网进行网络报名或去善衡校区广场进行现场报名，我们期待你的加入！</li>
-                <li class="list-group-item"><strong>Organizer:</strong>Department of Music</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-              </ul>
+    <div class="col-8">
+        <div class="row">
+            <div class="col-6">
+                <img width="340px" height="220px" class="mr-3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR37vpcYq1SGUS3Qc0ECbezLBIUu6PBZLYUtBhD2EEJhpNnKLxBhQ"
+                    alt="Generic placeholder image">
+                <div class="card-body">
+                    <a href="#" class="card-link">Singing Contest</a>
+                    <div class="media">
+                        <div class="media-body">
+                            一年一度既HKBU Singing Contest又到啦！身为浸大人怎么能够错过！？欢迎大家踊跃报名！可登录学校官网进行网络报名或去善衡校区广场进行现场报名，我们期待你的加入！
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+            <div class="col-6">
+                <img width="340px" height="240px" class="mr-3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR37vpcYq1SGUS3Qc0ECbezLBIUu6PBZLYUtBhD2EEJhpNnKLxBhQ"
+                    alt="Generic placeholder image">
+                <div class="card-body">
+                    <a href="#" class="card-link">Singing Contest</a>
+                    <div class="media">
+                        <div class="media-body">
+                            一年一度既HKBU Singing Contest又到啦！身为浸大人怎么能够错过！？欢迎大家踊跃报名！可登录学校官网进行网络报名或去善衡校区广场进行现场报名，我们期待你的加入！
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+    </div>
+    <div class="col-4">
+        <form>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Event name:</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
+            <div class="form-group">Organizer:</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Event name:</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Event name:</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
+            <div class="form-group">Organizer:</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary" type="submit" value="Submit">
+            </div>
+        </form>
+    </div> -->
+    <div class="col-lg-8 col-md-12">
+        <% const current = parseInt(req.query.page) || 1; %>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a class="page-link" href="/pages/search/?page=<%= Math.max(current-1, 1) %>">Previous</a>
+                </li>
+                <% for (i = 1; i <= count; i++) { %>
+                <li class="page-item">
+                    <a class="page-link" href="/pages/search/?page=<%= i %>">
+                        <%= i %></a>
+                </li>
+                <% } %>
+                <li class="page-item">
+                    <a class="page-link" href="/pages/search/?page=<%= Math.min(current+1, 1) %>">Next</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="row no-gutters">
+            <% pages.forEach( function(model) { %>
+            <div class="col-lg-6 col-md-12">
+                <div class="card">
+                    <img class="card-img-top" src="<%= model.imageurl %>" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: #0069d9">
+                            <%= model.name %>
+                        </h5>
+                        <p class="card-text">
+                            <%= model.fulldes %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-12">
+        <form action="#" method="GET" name="form" id="form">
+            <div class="form-group">
+                <label for="InputEventName">Event Name:</label>
+                <input type="text" class="form-control" id="InputEventName" placeholder="Enter Event Name" name="name">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlOrgainzer">Orgainzer:</label>
+                <select class="form-control" id="exampleFormControlOrgainzer" name="orgainzer">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="InputStartData">Start Data:</label>
+                <input type="text" class="datepicker form-control" id="InputStartData" placeholder="Select Start Data"
+                    name="startdata" />
+            </div>
+            <div class="form-group">
+                <label for="InputEndData">End Data:</label>
+                <input type="text" class="datepicker form-control" id="InputEndData" placeholder="Select End Data" name="enddata" />
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlVenue">Venue:</label>
+                <select class="form-control" id="exampleFormControlVenue" name="venue">
+                        <option>WLB 108</option>
+                        <option>OEE 1018</option>
+                        <option>ABC 306</option>
+                        <option>WLB 204</option>
+                        <option>OEE 1016</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary" onclick="confirmsearch()">Submit</button>
+        </form>
     </div>
 
-  </div>
-  </div>
+</div>
 
-
-  <!-- <div>
-              <div class="card-group">
-                <div class="card">
-                  <div class="card-body">
-                    <a href="#" class="card-link">Singing Contest</a>
-                    <p> </p>
-                    <div class="media">
-                      
-                      <img width="180px" height="260px" class="mr-3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR37vpcYq1SGUS3Qc0ECbezLBIUu6PBZLYUtBhD2EEJhpNnKLxBhQ"
-                        alt="Generic placeholder image">
-                      <div class="media-body">
-                        <div class="card" style="width: 18rem;">
-                          <ul class="list-group list-group-flush">
-                            <li class="list-group-item">一年一度既HKBU Singing
-                              Contest又到啦！身为浸大人怎么能够错过！？欢迎大家踊跃报名！可登录学校官网进行网络报名或去善衡校区广场进行现场报名，我们期待你的加入！</li>
-                            <li class="list-group-item"><strong>Organizer:</strong>Department of Music</li>
-                            <li class="list-group-item">Vestibulum at eros</li>
-                            <li class="list-group-item">Cras justo odio</li>
-                            <li class="list-group-item">Dapibus ac facilisis in</li>
-                            <li class="list-group-item">Vestibulum at eros</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
-
-
+<script>
+    function confirmsearch() {
+        var item = {}
+        var itemArray = $('form').serializeArray();
+        $.each(itemArray, function () {
+            item[this.name] = this.value;
+        });
+        document.form.submit();
+    }
+</script>
+<!-- <div class="row">
+    <div class="col-4">
+        <img width="330px" height="220px" class="mr-3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR37vpcYq1SGUS3Qc0ECbezLBIUu6PBZLYUtBhD2EEJhpNnKLxBhQ"
+            <a href="#" class="card-link">Singing Contest</a>
+        <div class="media-body">
+            一年一度既HKBU Singing Contest又到啦！身为浸大人怎么能够错过！？欢迎大家踊跃报名！可登录学校官网进行网络报名或去善衡校区广场进行现场报名，我们期待你的加入！
+        </div>
+    </div>
+    <div class="col-4">
+        <img width="330px" height="240px" class="mr-3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR37vpcYq1SGUS3Qc0ECbezLBIUu6PBZLYUtBhD2EEJhpNnKLxBhQ"
+            <a href="#" class="card-link">Singing Contest</a>
+        <div class="media-body">
+            一年一度既HKBU Singing Contest又到啦！身为浸大人怎么能够错过！？欢迎大家踊跃报名！可登录学校官网进行网络报名或去善衡校区广场进行现场报名，我们期待你的加入！
+        </div>
+    </div>
+    <div class="col-4">
+        <form>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Event name:</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
+            <div class="form-group">Organizer:</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Event name:</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Event name:</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
+            <div class="form-group">Organizer:</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary" type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</div> -->

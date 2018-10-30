@@ -34,15 +34,23 @@
   <!--STYLES END-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
     crossorigin="anonymous">
-  <style>
-    /* css格式 */
-  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css"
+    integrity="sha256-9w7XtQnqRDvThmsQHfLmXdDbGasYsSjF6FSXrDh7F6g=" crossorigin="anonymous" />
+    <style>
+        p {
+        line-height:18px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 6;
+        overflow: hidden;
+        }
+        </style>
 </head>
 
 <body>
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="./../Event/hp">Home</a>
+      <a class="navbar-brand" href="./../Event/index">Home</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -50,13 +58,13 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="./../Event/se">Search</a>
+            <a class="nav-link" href="./../Event/search">Search</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./../Event/cr">Create</a>
+            <a class="nav-link" href="./../Event/create">Create</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./../Event/ad">Admin</a>
+            <a class="nav-link" href="./../Event/admin">Admin</a>
           </li>
         </ul>
       </div>
@@ -148,6 +156,15 @@
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js" integrity="sha256-ncetQ5WcFxZU3YIwggfwOwmewLVX4SHLBtDYnrsxooY="
+    crossorigin="anonymous"></script>
+  <script>
+    $('.datepicker').datepicker(
+      {
+        format: 'mm/dd/yyyy',
+        startDate: '-3d'
+      });
+  </script>
 </body>
 
 </html>

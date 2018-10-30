@@ -1,7 +1,38 @@
 <!--index.ejs-->
-<table class="table">
-        <% pages.forEach( function(model) { %>
-            <tr><td><%= model.name %></td><td><%= model.age %></td></tr>
-        <% }); %>
-    </table>
-    
+<div class="row">
+    <% pages.forEach( function(model) { %>
+    <div class="col-lg-6 col-md-12">
+        <div class="card" onclick="godetail(<%= model.id %>)">
+            <div class="card-body">
+                <h5 class="card-title" style="color: #0069d9">
+                    <%= model.name %>
+                </h5>
+                <div class="row">
+                    <div class="col-4">
+                        <img style="height: 160px;" class="card-img-top" src="<%= model.imageurl %>" alt="Card image cap">
+                    </div>
+                    <div class="col-8">
+                        <p class="card-text">
+                            <%= model.fulldes %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% }); %>
+</div>
+<script>
+    function godetail(item) {
+        window.location.href = '/details/' + item;
+    };
+</script>
+<style>
+    p {
+        line-height: 18px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 6;
+        overflow: hidden;
+    }
+</style>

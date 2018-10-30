@@ -25,12 +25,19 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': {
-    view: 'pages/homepage'
+    view: 'pages/index'
   },
   // '/search': {
   //   view: 'pages/search'
   // },
-
+  '/': 'EventController.index',
+  '/search': 'EventController.search',
+  '/create': 'EventController.create',
+  '/admin': 'EventController.admin',
+  '/details/:id': 'EventController.details',
+  'GET /update/:id': 'EventController.update',
+  'POST /update/:id': 'EventController.update',
+  'POST /delete/:id': 'EventController.delete',
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *
